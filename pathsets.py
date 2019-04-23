@@ -14,7 +14,8 @@ class PathSets:
         workstations.'''
         path_sets = {}
         for k,v in paths.items():
-            k = set(k)
+            k = list(k)
+            k.sort()
             k = tuple(k)
             path_sets[k] = path_sets.get(k, 0) + v
         return path_sets

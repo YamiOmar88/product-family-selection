@@ -4,6 +4,17 @@
 
 # Threshold study
 # ===============
+import fileread
+import pathsets
+import family
+
+filename = "data/paths_with_count.txt"
+all_paths = fileread.FileRead(filename).read_paths_with_counts()
+paths_sets = pathsets.PathSets(all_paths)
+paths_list = paths_sets.order_sets(reversed=True)
+
+
+
 threshold_values = [0.5, 0.55, 0.6, 0.63, 0.65, 0.68, 0.7, 0.75, 0.8, 0.9]
 F1_count, F1_bases, F2_count, F2_bases, F3_count, F3_bases = [],[],[],[],[],[]
 bases = [(58379, (24, 26, 29, 30, 33, 34, 36, 37)), (10613, (0, 1, 2, 5, 6, 8, 11, 29, 30, 33, 34, 36, 37)), (4011, (12, 13, 15, 17, 18, 20, 23, 29, 30, 33, 34, 36, 37))]

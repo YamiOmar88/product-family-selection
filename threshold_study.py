@@ -26,7 +26,7 @@ for t in threshold_values:
     F1 = family.Family()
     F1.base = {24, 26, 29, 30, 33, 34, 36, 37}
     F1.family_members.append((24, 26, 29, 30, 33, 34, 36, 37))
-    F1.family_count += 58379
+    F1.family_count += 58375
     Unused1 = F1.find_family(Paths_List, threshold=t)
     F1_count.append(F1.family_count)
     F1_bases.append(F1.base)
@@ -34,7 +34,7 @@ for t in threshold_values:
     F2 = family.Family()
     F2.base = {0, 1, 2, 5, 6, 8, 11, 29, 30, 33, 34, 36, 37}
     F2.family_members.append((0, 1, 2, 5, 6, 8, 11, 29, 30, 33, 34, 36, 37))
-    F2.family_count += 10613
+    F2.family_count += 10569
     Unused2 = F2.find_family(Unused1, threshold=t)
     F2_count.append(F2.family_count)
     F2_bases.append(F2.base)
@@ -42,7 +42,7 @@ for t in threshold_values:
     F3 = family.Family()
     F3.base = {12, 13, 15, 17, 18, 20, 23, 29, 30, 33, 34, 36, 37}
     F3.family_members.append((12, 13, 15, 17, 18, 20, 23, 29, 30, 33, 34, 36, 37))
-    F3.family_count += 4011
+    F3.family_count += 3866
     Unused3 = F3.find_family(Unused2, threshold=t)
     F3_count.append(F3.family_count)
     F3_bases.append(F3.base)
@@ -64,4 +64,4 @@ plt.plot(threshold_values, total_count, marker='o', color='#000000', markersize=
 plt.xlabel('threshold values')
 plt.ylabel('fraction of items')
 plt.legend(['threshold = 0.63', 'F1', 'F2', 'F3', 'F1 + F2 + F3'], loc=1)
-plt.savefig('results/threshold_study.pdf')
+plt.savefig('results/product_family_threshold_study.pdf')
